@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Variables CSS personalizadas */
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Componentes base */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center px-4 py-2 border border-secondary-300 text-sm font-medium rounded-lg text-secondary-700 bg-white hover:bg-secondary-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-danger-600 hover:bg-danger-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-danger-500 transition-colors;
+  }
+
+  .input-field {
+    @apply block w-full px-3 py-2 border border-secondary-300 rounded-lg text-sm placeholder-secondary-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors;
+  }
+
+  .textarea-field {
+    @apply block w-full px-3 py-2 border border-secondary-300 rounded-lg text-sm placeholder-secondary-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors resize-none;
+  }
+
+  .select-field {
+    @apply block w-full px-3 py-2 border border-secondary-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors;
+  }
+
+  .card {
+    @apply bg-white rounded-lg border border-secondary-200 shadow-soft;
+  }
+
+  .card-header {
+    @apply px-6 py-4 border-b border-secondary-200;
+  }
+
+  .card-body {
+    @apply px-6 py-4;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-primary {
+    @apply bg-primary-100 text-primary-800;
+  }
+
+  .badge-success {
+    @apply bg-success-100 text-success-800;
+  }
+
+  .badge-warning {
+    @apply bg-warning-100 text-warning-800;
+  }
+
+  .badge-danger {
+    @apply bg-danger-100 text-danger-800;
+  }
+
+  .badge-secondary {
+    @apply bg-secondary-100 text-secondary-800;
+  }
+}
+
+/* Animaciones personalizadas */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Estados de carga */
+.loading-spinner {
+  @apply animate-spin rounded-full border-2 border-secondary-200 border-t-primary-600;
+}
+
+/* Utilidades específicas de la aplicación */
+.kanban-card {
+  @apply bg-white rounded-lg border border-secondary-200 p-4 shadow-soft hover:shadow-medium transition-shadow cursor-pointer;
+}
+
+.kanban-column {
+  @apply bg-secondary-50 rounded-lg p-4 min-h-96;
+}
+
+.priority-critical {
+  @apply border-l-4 border-danger-500;
+}
+
+.priority-high {
+  @apply border-l-4 border-warning-500;
+}
+
+.priority-medium {
+  @apply border-l-4 border-primary-500;
+}
+
+.priority-low {
+  @apply border-l-4 border-success-500;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .mobile-hidden {
+    display: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

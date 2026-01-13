@@ -1,0 +1,41 @@
+# 🧠 Team Manager Desktop - Dependencias Backend
+
+# Framework web
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+
+# Base de datos
+aiosqlite==0.19.0
+sqlalchemy==2.0.23
+alembic==1.12.1
+
+# IA y ML
+openai==1.3.7
+anthropic==0.7.7
+numpy==1.24.3
+pandas==2.0.3
+scikit-learn==1.3.0
+
+# Utilidades
+pydantic==2.5.0
+python-dateutil==2.8.2
+python-multipart==0.0.6
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# Análisis y métricas
+plotly==5.17.0
+matplotlib==3.7.2
+seaborn==0.12.2
+
+# Configuración y logging
+python-dotenv==1.0.0
+structlog==23.2.0
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+httpx==0.25.2
+
+# Empaquetado
+pyinstaller==6.2.0
